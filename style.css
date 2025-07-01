@@ -1,0 +1,229 @@
+:root {
+  --apple-bg: #f5f5f7;
+  --apple-card-bg: #ffffff;
+  --apple-text: #1d1d1f;
+  --apple-accent: #0071e3;
+  --apple-gray: #86868b;
+  --apple-light-gray: #d2d2d7;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--apple-bg);
+  color: var(--apple-text);
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 22px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  padding: 40px 0 60px;
+}
+
+.swiper-slide {
+  width: 280px;
+  background: var(--apple-card-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.swiper-slide:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--apple-light-gray);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--apple-text);
+  letter-spacing: -0.2px;
+}
+
+.card-btn {
+  background-color: transparent;
+  color: var(--apple-accent);
+  border: 1px solid var(--apple-accent);
+  padding: 8px 16px;
+  border-radius: 980px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.card-btn:hover {
+  background-color: rgba(0, 113, 227, 0.1);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--apple-text);
+  width: 44px;
+  height: 44px;
+  background-color: var(--apple-card-bg);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 1;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  background: var(--apple-gray);
+  opacity: 0.4;
+  width: 6px;
+  height: 6px;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--apple-text);
+  opacity: 0.8;
+  width: 8px;
+  height: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: var(--apple-card-bg);
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 800px;
+  position: relative;
+  animation: modalopen 0.4s cubic-bezier(0.28, 0.44, 0.4, 1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  color: var(--apple-gray);
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: var(--apple-text);
+}
+
+.modal-content h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin: 20px 0;
+  border-radius: 12px;
+  border: 1px solid var(--apple-light-gray);
+}
+
+.modal-content p {
+  color: var(--apple-gray);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 22px;
+  background-color: var(--apple-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.project-link:hover {
+  background-color: #006edb;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .swiper-slide {
+    width: 240px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 30px;
+    margin: 40px auto;
+  }
+
+  .modal-content h2 {
+    font-size: 26px;
+  }
+}

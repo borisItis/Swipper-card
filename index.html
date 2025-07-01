@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipper Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" data-modal="modal-1">
+            <img src="./images/luxorycars.png" alt="Luxury Cars Project" />
+            <div class="card-content">
+              <h2 class="card-title">Luxury Cars</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+          <div class="swiper-slide" data-modal="modal-2">
+            <img src="./images/Uber-Eats.jpg" alt="Uber Eats Project" />
+            <div class="card-content">
+              <h2 class="card-title">Uber Eats</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+          <div class="swiper-slide" data-modal="modal-3">
+            <img src="./images/cover lyxory.png" alt="Cover Luxury Project" />
+            <div class="card-content">
+              <h2 class="card-title">Cover Luxury</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+          <div class="swiper-slide" data-modal="modal-4">
+            <img src="./images/Ai.png" alt="AI Project" />
+            <div class="card-content">
+              <h2 class="card-title">AI Project</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+          <div class="swiper-slide" data-modal="modal-5">
+            <img src="./images/16-pro.png" alt="16 Pro Project" />
+            <div class="card-content">
+              <h2 class="card-title">16 Pro</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+          <div class="swiper-slide" data-modal="modal-6">
+            <img src="./images/e-store.jpg" alt="E-Store Project" />
+            <div class="card-content">
+              <h2 class="card-title">E-Store</h2>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <div id="modal-1" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Luxury Cars Project</h2>
+        <img src="./images/luxorycars.png" alt="Luxury Cars Project" />
+        <p>Detailed description of Luxury Cars project...</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Uber Eats Project</h2>
+        <img src="./images/Uber-Eats.jpg" alt="Uber Eats Project" />
+        <p>Detailed description of Uber Eats project...</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+
+    <div id="modal-3" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Cover Luxury Project</h2>
+        <img src="./images/cover lyxory.png" alt="Cover Luxury Project" />
+        <p>Detailed description of Cover Luxury project...</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
