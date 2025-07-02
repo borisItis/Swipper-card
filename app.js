@@ -2,7 +2,7 @@ const swiper = new Swiper(".swiper", {
   slidesPerView: 2,
   spaceBetween: 50,
   loop: true,
-  effect: "slider",
+  effect: "slide",
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -11,55 +11,28 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-next",
   },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-    },
-  },
 });
 
-// Работа с модальными окнами
-const modalTriggers = document.querySelectorAll(".swiper-slide");
-const modals = document.querySelectorAll(".modal");
-const closeButtons = document.querySelectorAll(".close");
+// Получаем элементы для модалок
+const swiperWrapper = document.querySelector(".swiper-wrapper");
+const modalContainer = document.querySelector("body");
 
-// Открытие модального окна
-modalTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", function () {
-    const modalId = this.getAttribute("data-modal");
-    document.getElementById(modalId).style.display = "block";
-    document.body.style.overflow = "hidden"; // Запрет прокрутки фона
-  });
-});
+swiperWrapper.addEventListener("click", (e) => {
+  if (e.target.classList.contains("card-btn")) {
+    const card = e.target.closest(".swiper-slide");
+    const modalId = card.getAttribute("data-modal");
+    const modal = document.getElementById(modalId);
 
-// Закрытие модального окна
-closeButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    this.closest(".modal").style.display = "none";
-    document.body.style.overflow = "auto"; // Возврат прокрутки
-  });
-});
-
-// Закрытие при клике вне модального окна
-window.addEventListener("click", function (event) {
-  if (event.target.classList.contains("modal")) {
-    event.target.style.display = "none";
-    document.body.style.overflow = "auto";
+    modal.style.display = "flex";
+    document.body.classList.add("no-scroll");
   }
 });
 
-// Закрытие по ESC
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    modals.forEach((modal) => {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    });
+// Закрытие модалки по крестику
+modalContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("close")) {
+    const modal = e.target.closest(".modal");
+    modal.style.display = "none";
+    document.body.classList.remove("no-scroll");
   }
 });
